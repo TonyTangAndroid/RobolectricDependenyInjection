@@ -7,10 +7,24 @@ android {
     defaultConfig {
         applicationId "com.whiterabbit.robolectricdependency"
         minSdkVersion 15
+        //noinspection OldTargetApi
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
     }
+
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
+
+
     buildTypes {
         release {
             minifyEnabled false
@@ -40,4 +54,5 @@ dependencies {
     testCompile "org.robolectric:robolectric:3.6.1"
     testCompile "org.mockito:mockito-core:2.12.0"
 
+    testCompile 'junit:junit:4.12'
 }
